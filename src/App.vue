@@ -4,12 +4,14 @@
                          :trivia="currentQuestion"
                          @correct-answer="onQuestionAnswered"
                          @incorrect-answer="onQuestionAnswered"/>
+        <question-progress />
     </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from "vue-property-decorator";
 import TriviaQuestion from "@/components/TriviaQuestion.vue";
+import QuestionProgress from "@/components/QuestionProgress.vue";
 import {ITrivia} from "@/types";
 import axios from "axios";
 import {ITriviaGetResponse} from "./types/ITriviaGetResponse";
@@ -28,6 +30,7 @@ const decodeQuestion = (encoded: ITrivia): ITrivia => {
 @Component({
     components: {
         TriviaQuestion,
+        QuestionProgress
     },
 })
 export default class App extends Vue {
@@ -71,5 +74,6 @@ export default class App extends Vue {
         padding-top: 2.5rem;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
     }
 </style>
