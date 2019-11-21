@@ -5,6 +5,7 @@
                          @correct-answer="onQuestionAnswered"
                          @incorrect-answer="onQuestionAnswered"/>
         <question-progress />
+        <feedback-form />
     </div>
 </template>
 
@@ -12,6 +13,7 @@
 import {Component, Vue} from "vue-property-decorator";
 import TriviaQuestion from "@/components/TriviaQuestion.vue";
 import QuestionProgress from "@/components/QuestionProgress.vue";
+import FeedbackForm from "@/components/FeedbackForm.vue";
 import {ITrivia} from "@/types";
 import axios from "axios";
 import {ITriviaGetResponse} from "./types/ITriviaGetResponse";
@@ -30,7 +32,8 @@ const decodeQuestion = (encoded: ITrivia): ITrivia => {
 @Component({
     components: {
         TriviaQuestion,
-        QuestionProgress
+        QuestionProgress,
+        FeedbackForm
     },
 })
 export default class App extends Vue {
