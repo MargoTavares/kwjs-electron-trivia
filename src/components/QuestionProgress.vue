@@ -1,5 +1,5 @@
 <template>
-    <div class="trivia-question">
+    <div class="progress-bar">
         <div>Score Progress: </div>
     </div>
 </template>
@@ -16,8 +16,8 @@ export default class QuestionProgress extends Vue {
 
 
 <style lang="scss" scoped>
-    .trivia-question {
-        background-color: lightcyan;
+    .progress-bar {
+        background-color: orange;
         max-width: 30rem;
         border-radius: 0.75rem;
         display: flex;
